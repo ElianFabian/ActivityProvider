@@ -1,4 +1,4 @@
-[![Release](https://jitpack.io/v/elianfabian/ActivityProvider.svg)](https://jitpack.io/#elianfabian/ActivityProvider)
+[![](https://jitpack.io/v/ElianFabian/ActivityProvider.svg)](https://jitpack.io/#ElianFabian/ActivityProvider)
 
 # ActivityProvider
 
