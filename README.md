@@ -65,7 +65,8 @@ Observe the current activity reactively using `StateFlow`.
 ActivityProvider.activity.collect { activity ->
     if (activity != null) {
         // Activity is active
-    } else {
+    }
+    else {
         // No activity is currently active
     }
 }
