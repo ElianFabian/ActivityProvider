@@ -1,6 +1,6 @@
-# ActivityProvider
-
 [![Release](https://jitpack.io/v/elianfabian/ActivityProvider.svg)](https://jitpack.io/#elianfabian/ActivityProvider)
+
+# ActivityProvider
 
 A lightweight Android library that provides safe, lifecycle-aware access to the current `ComponentActivity`.
 
