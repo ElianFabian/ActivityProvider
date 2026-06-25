@@ -32,7 +32,7 @@ Add the dependency to your `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.elianfabian:ActivityProvider:1.0.0")
+    implementation("com.github.ElianFabian:ActivityProvider:$version")
 }
 ```
 
