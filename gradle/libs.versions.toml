@@ -1,7 +1,7 @@
 [versions]
 
 # Project Metadata
-activityProviderVersion = "1.0.0"
+activityProviderVersion = "1.0.1"
 activityProviderGroup = "com.github.ElianFabian.ActivityProvider"
 
 agp = "9.2.1"
@@ -13,6 +13,7 @@ robolectric = "4.14.1"
 espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.9.2"
 activityCompose = "1.13.0"
+activity = "1.8.0"
 kotlin = "2.2.10"
 composeBom = "2026.02.01"
 appcompat = "1.7.1"
@@ -27,6 +28,7 @@ androidx-test-core = { group = "androidx.test", name = "core-ktx", version.ref =
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }

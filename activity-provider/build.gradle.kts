@@ -26,8 +26,8 @@ android {
 }
 
 dependencies {
-	implementation(libs.kotlinxCoroutinesAndroid)
-	implementation(libs.androidx.appcompat)
+	api(libs.kotlinxCoroutinesAndroid)
+	api(libs.androidx.activity)
 	implementation(libs.androidx.startupRuntime)
 
 	testImplementation(libs.junit)

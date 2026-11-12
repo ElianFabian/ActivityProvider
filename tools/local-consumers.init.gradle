@@ -1,0 +1,17 @@
+// Validate sibling checkouts without changing their published dependencies.
+gradle.settingsEvaluated { settings ->
+    if (settings.gradle.parent == null && settings.settingsDir.name != 'ActivityProvider') {
+        settings.includeBuild(new File(settings.settingsDir.parentFile, 'ActivityProvider')) {
+            dependencySubstitution {
+                substitute module('com.github.ElianFabian:ActivityProvider') using project(':activity-provider')
+            }
+        }
+        if (settings.settingsDir.name == 'YuruPermissions') {
+            settings.includeBuild(new File(settings.settingsDir.parentFile, 'ActivityResultBridge')) {
+                dependencySubstitution {
+                    substitute module('com.github.ElianFabian:ActivityResultBridge') using project(':activity-result-bridge')
+                }
+            }
+        }
+    }
+}

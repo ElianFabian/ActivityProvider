@@ -12,7 +12,7 @@ This utility manages activity references automatically via `Application.Activity
 - **Lifecycle Aware**: Automatically tracks the current activity and clears references on destruction.
 - **Coroutine Support**: Suspend functions to wait for an active activity.
 - **Reactive**: Observe the current activity as a `StateFlow`.
-- **Memory Safe**: Prevents leaks by only holding references to the active `ComponentActivity`.
+- **Reference Cleanup**: Releases the selected `ComponentActivity` when it is destroyed.
 
 ## Installation
 
@@ -37,6 +37,15 @@ dependencies {
 ```
 
 ## Usage
+
+The provider selects the latest `ComponentActivity` observed during creation, start, or resume.
+It keeps that instance while paused or stopped and clears it when the selected instance is destroyed.
+The flow reports changes of instance; it does not emit every lifecycle transition. Android operations
+still need the appropriate main thread and lifecycle state. Consumers must release their own references
+and registrations when they no longer need them.
+
+With several simultaneous activities, destroying the selected instance clears the provider;
+it does not automatically select an earlier instance.
 
 ### Get Current Activity (Synchronous)
 

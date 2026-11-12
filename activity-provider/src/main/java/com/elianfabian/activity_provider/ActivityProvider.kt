@@ -11,10 +11,10 @@ import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 
 /**
- * A singleton that provides safe, lifecycle-aware access to the current [ComponentActivity].
+ * Provides the latest [ComponentActivity] observed during creation, start, or resume.
  *
  * This utility manages activity references automatically via [Application.ActivityLifecycleCallbacks]
- * to prevent common memory leaks associated with static references. It allows services,
+ * and releases the selected instance when it is destroyed. It allows services,
  * view models, or libraries to perform operations that require an activity context without
  * needing to pass the activity instance manually through layers of code.
  */
@@ -27,12 +27,14 @@ object ActivityProvider {
 	}
 
 	/**
-	 * A reactive stream of the current [ComponentActivity]. Emits null when no activity is active.
+	 * The selected instance, retained while paused or stopped and cleared on destruction.
+	 * This represents instance changes, not individual lifecycle events. Activity operations
+	 * must still respect Android's main-thread and lifecycle requirements.
 	 */
 	val activity: StateFlow<ComponentActivity?> = _currentActivity.asStateFlow()
 
 	/**
-	 * Get the current [ComponentActivity] or null if there is none.
+	 * Gets the selected [ComponentActivity], or null if no instance is selected.
 	 */
 	fun getActivityOrNull(): ComponentActivity? = _currentActivity.value
 
